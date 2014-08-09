@@ -1,6 +1,5 @@
+source 'https://code.stripe.com'
 source 'https://rubygems.org'
-
-
 
 gem 'rails', '4.1.0'
 gem 'sass-rails', '~> 4.0.3'
@@ -14,6 +13,7 @@ gem 'paperclip', github: 'thoughtbot/paperclip'
 gem "paperclip-dropbox", ">= 1.1.7"
 gem "figaro"
 gem "devise"
+gem 'stripe'
 
 group :production do
   gem 'pg'
