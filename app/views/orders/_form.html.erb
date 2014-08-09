@@ -1,3 +1,5 @@
+<div class="row">
+  <div class="col-md-6">
 <%= form_for([@listing, @order]) do |f| %>
   <% if @order.errors.any? %>
     <div id="error_explanation">
@@ -45,3 +47,5 @@
     <%= f.submit "Complete Order", class: "btn btn-success" %>
   </div>
 <% end %>
+</div>
+</div>
