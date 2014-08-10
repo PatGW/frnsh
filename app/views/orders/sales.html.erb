@@ -18,8 +18,10 @@
       <td class="center"><%= number_to_currency(order.listing.price, :unit => "£") %></td>
       <td class="center"><%= order.buyer.name %></td>
       <td class="center"><%= order.created_at.strftime("%B %-d, %Y") %></td>
+    </tr>
+    <% end %>
   </table>
-  <% end %>
+  
 
 <br>
 
