@@ -2,15 +2,24 @@ Rails.application.routes.draw do
   
 
   devise_for :users
-  resources :listings do
+    resources :listings do
     resources :orders, only: [:new, :create]
+  end
+
+  resources :vendors do
+    resources :listings 
   end
 
   get 'pages/about'
   get 'pages/contact'
+  get 'pages/shipping'
+  get 'pages/returns'
+  get 'pages/buyers'
+  get 'pages/sellers'
   get 'seller' => "listings#seller"
   get 'sales' => "orders#sales"
   get 'purchases' => "orders#purchases"
+  get 'vendor' => "listings#vendor"
 
 
 

@@ -2,6 +2,7 @@ class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!, only: [:seller, :new, :create, :edit, :update, :destroy]
   before_filter :check_user, only: [:edit, :update, :destroy]
+  before_filter :set_vendor, only: [:index]
   # GET /listings
   # GET /listings.json
 
@@ -9,8 +10,11 @@ class ListingsController < ApplicationController
     @listings = Listing.where(user: current_user).order("created_at DESC")
   end
 
+
+
   def index
-    @listings = Listing.all.order("created_at DESC")
+    @listings  = @vendor.present? ? @vendor.listings : Listing.all
+    @listings  = @listings.order("created_at DESC")
   end
 
   # GET /listings/1
@@ -21,6 +25,7 @@ class ListingsController < ApplicationController
   # GET /listings/new
   def new
     @listing = Listing.new
+
   end
 
   # GET /listings/1/edit
@@ -72,6 +77,10 @@ class ListingsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_listing
       @listing = Listing.find(params[:id])
+    end
+
+    def set_vendor
+      @vendor = User.where(id: params[:vendor_id]).first
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
