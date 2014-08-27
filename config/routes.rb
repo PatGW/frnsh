@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   get 'seller' => "listings#seller"
   get 'sales' => "orders#sales"
   get 'purchases' => "orders#purchases"
-  get 'vendor' => "listings#vendor"
+  
 
 
 

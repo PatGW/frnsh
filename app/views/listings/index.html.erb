@@ -1,5 +1,9 @@
 
 <div class="center">
+  <% unless @vendor.blank? %>
+  <%= @vendor.name %>
+  <%= @vendor.bio %>
+<% end %>
 <div class="row">
   <% @listings.each do |listing| %>
     <div class="col-md-3">
@@ -10,6 +14,7 @@
         <h3><%= listing.name %></h3>
         <p><%= link_to listing.user.name, vendor_listings_path(:vendor_id => listing.user.to_param) %></p>
         <p><%= number_to_currency(listing.price, :unit => "£") %></p>
+        <p><%=  %></p>
       </div>
     </div>
         
@@ -17,10 +22,11 @@
 
   <% end %>
 </div>
-</div>
 
+</div>
 
 <br>
 <% if user_signed_in? %>
 <%= link_to 'New Listing', new_listing_path, class: "btn btn-primary" %>
 <% end %>
+
