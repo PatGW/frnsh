@@ -1,9 +1,22 @@
 
 <div class="center">
+  <div id="vendor-info">
+  <div class="row">
+  <div class="col-md-5">
   <% unless @vendor.blank? %>
-  <%= @vendor.name %>
-  <%= @vendor.bio %>
-<% end %>
+    <%= image_tag @vendor.cover_image %>
+  <% end %>
+</div>
+
+  <div class="col-md-3">
+      <% unless @vendor.blank? %>
+    <%= @vendor.name %>
+    <%= @vendor.bio %>
+  <% end %>
+  </div>
+</div>
+</div>
+
 <div class="row">
   <% @listings.each do |listing| %>
     <div class="col-md-3">
@@ -14,7 +27,6 @@
         <h3><%= listing.name %></h3>
         <p><%= link_to listing.user.name, vendor_listings_path(:vendor_id => listing.user.to_param) %></p>
         <p><%= number_to_currency(listing.price, :unit => "£") %></p>
-        <p><%=  %></p>
       </div>
     </div>
         
