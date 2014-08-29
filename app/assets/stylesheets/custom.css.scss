@@ -47,3 +47,22 @@ body {
 #vendor-info {
   padding: 20px;
 }
+
+#new-listing {
+  display: inline-block;
+margin-bottom: 0;
+font-weight: normal;
+text-align: center;
+vertical-align: middle;
+cursor: pointer;
+background-image: none;
+border: 1px solid transparent;
+white-space: nowrap;
+padding: 6px 12px;
+font-size: 14px;
+line-height: 1.428571429;
+border-radius: 4px;
+-webkit-user-select: none;
+position: absolute;
+margin-top: 2px;
+}
