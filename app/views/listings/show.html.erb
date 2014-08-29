@@ -8,6 +8,7 @@
 
 	<div class="col-md-6">
 		<h3><%= @listing.name %></h3>
+		<p><%= link_to @listing.user.name, vendor_listings_path(:vendor_id => @listing.user.to_param) %></p>
 		<p><%= number_to_currency(@listing.price, :unit => "£") %></p>
 		<p><%= @listing.vendor %></p>
 		<p><%= @listing.description %></p>
