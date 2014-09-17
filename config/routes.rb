@@ -5,7 +5,11 @@ Rails.application.routes.draw do
 
   devise_for :users
     resources :listings do
-    resources :orders, only: [:new, :create]
+    resources :orders, only: [:new, :create] do
+      collection do
+        get 'get_shipping_cost'
+      end
+    end
   end
 
   resources :vendors do

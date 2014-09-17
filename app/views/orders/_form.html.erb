@@ -4,7 +4,9 @@
       <%= image_tag @listing.image.url %>
     </div>
     <h3><%= @listing.name %></h3>
-    <h4><%= number_to_currency(@listing.price) %></h4>
+    <h4><%= number_to_currency(@listing.price, :unit => "£") %></h4>
+    Shipping cost:
+    <div id="shipping-cost">Enter post code</div>
   </div>
   <div class="col-md-8">
 
@@ -21,6 +23,8 @@
       </ul>
     </div>
   <% end %>
+
+  <%= f.hidden_field :shipping_cost, value: 0 %>
 
   <div id="stripe_error" class="alert alert-danger" style="display:none">
         <noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser settings.</noscript>
@@ -46,15 +50,11 @@
     <%= f.label :county %>
     <%= f.text_field :county, class: "form-control" %>
   </div>
+
   <div class="form-group">
     <%= f.label :post_code %>
-    <%= f.text_field :post_code, class: "form-control" %>
+    <%= f.text_field :post_code, class: "form-control js-use-code-input" %>
   </div>
-
-   <div class="form-group">
-          <%= label_tag :voucher, nil, class: 'discount-code-label' %>
-          <%= text_field_tag :voucher, nil, class: "form-control js-use-code-input" %>
-      </div>
 
   <div class="form-group">
     <%= f.label :phone %>

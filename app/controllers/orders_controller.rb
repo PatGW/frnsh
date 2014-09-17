@@ -4,6 +4,18 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
 
+  def get_shipping_cost
+    # might be useful later
+    # listing = Listing.find(params[:listing_id])
+    shipping_cost = Order.calculate_shipping_cost(params[:post_code])
+
+    if shipping_cost
+      render json: "{\"shipping_cost\": #{shipping_cost}}"
+    else
+      render json: nil
+    end
+  end
+
   def sales
     @orders = Order.all.where(seller: current_user).order("created_at DESC")
   end
@@ -33,7 +45,7 @@ class OrdersController < ApplicationController
 
     begin
       charge = Stripe::Charge.create(
-        :amount => (@listing.price * 100).floor,
+        :amount => ((@listing.price + @order.shipping_cost )* 100).floor,
         :currency => "gbp",
         :card => token
         )
@@ -66,6 +78,6 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:email, :name, :address, :city, :county, :post_code, :phone)
+      params.require(:order).permit(:email, :name, :address, :city, :county, :post_code, :phone, :shipping_cost)
     end
 end
