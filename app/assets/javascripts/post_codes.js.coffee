@@ -19,6 +19,7 @@ $(document).on 'ready page:load', ->
 getShippingCost = (listing_id, post_code) ->
   $.get "/listings/#{listing_id}/orders/get_shipping_cost?post_code=#{post_code}", (data) ->
     if data
-      $('#shipping-cost').html("$#{data.shipping_cost}")
+      $('#shipping-cost').html("£#{data.shipping_cost}")
+      $('#order_shipping_cost').val("#{data.shipping_cost}")
     else
       $('#shipping-cost').html("Incorrect post code")

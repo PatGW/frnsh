@@ -45,7 +45,7 @@ class OrdersController < ApplicationController
 
     begin
       charge = Stripe::Charge.create(
-        :amount => (@listing.price * 100).floor,
+        :amount => ((@listing.price + @order.shipping_cost )* 100).floor,
         :currency => "gbp",
         :card => token
         )
@@ -78,6 +78,6 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:email, :name, :address, :city, :county, :post_code, :phone)
+      params.require(:order).permit(:email, :name, :address, :city, :county, :post_code, :phone, :shipping_cost)
     end
 end
