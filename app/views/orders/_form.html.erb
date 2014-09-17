@@ -50,6 +50,12 @@
     <%= f.label :post_code %>
     <%= f.text_field :post_code, class: "form-control" %>
   </div>
+
+   <div class="form-group">
+          <%= label_tag :voucher, nil, class: 'discount-code-label' %>
+          <%= text_field_tag :voucher, nil, class: "form-control js-use-code-input" %>
+      </div>
+
   <div class="form-group">
     <%= f.label :phone %>
     <%= f.text_field :phone, class: "form-control" %>
