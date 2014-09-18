@@ -66,3 +66,12 @@ border-radius: 4px;
 position: absolute;
 margin-top: 2px;
 }
+
+.thumbnail > img,
+.thumbnail a > img {
+ max-height: 180px;
+}
+
+img {
+  max-width: 500px;
+}
