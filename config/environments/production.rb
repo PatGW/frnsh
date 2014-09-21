@@ -84,4 +84,6 @@ Rails.application.configure do
    # Required for Devise gem
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
 
+  GA.tracker = "UA-55026223-1"
+
 end
