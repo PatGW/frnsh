@@ -16,6 +16,9 @@ Rails.application.routes.draw do
     resources :listings 
   end
 
+  match '/contacts',     to: 'contacts#new',             via: 'get'
+  resources "contacts", only: [:new, :create]
+
   get 'pages/about'
   get 'pages/contact'
   get 'pages/shipping'
