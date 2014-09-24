@@ -17,6 +17,10 @@ class Listing < ActiveRecord::Base
   	belongs_to :user
   	has_many :orders
   	belongs_to :category
+
+  	def self.random_listing
+  	@listings = Listing.limit(4).order("RANDOM()")
+  	end
 end
 
 

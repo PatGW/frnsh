@@ -25,6 +25,13 @@ class ListingsController < ApplicationController
   # GET /listings/1
   # GET /listings/1.json
   def show
+    @listings  = @vendor.present? ? @vendor.listings : Listing.all
+     if params[:category].blank?
+      @listings = Listing.random_listing
+     else 
+      @category_id = Category.find_by(name: params[:category]).id
+      @listings = Listing.where(category_id: @category_id).order("created_at DESC")
+  end
   end
 
   # GET /listings/new
