@@ -33,13 +33,12 @@
 <div class="center">
   <div id="vendor-info">
   <div class="row">
-  <div class="col-md-5">
+  <div class="col-md-6">
   <% unless @vendor.blank? %>
     <%= image_tag @vendor.cover_image %>
   <% end %>
 </div>
-
-  <div class="col-md-3">
+  <div class="col-md-6">
       <% unless @vendor.blank? %>
     <%= @vendor.name %>
     <%= @vendor.bio %>
@@ -47,6 +46,7 @@
   </div>
 </div>
 </div>
+
 
 <div class="row">
   <% if @vendor.blank? then @listings.each do |listing| %>

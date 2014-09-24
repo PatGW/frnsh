@@ -7,7 +7,8 @@ body {
 }
 
 .navbar-default {
- background-color: #EFEFEB;
+ background-color: #fff;
+ border-color: #fff;
 }
 
 .navbar-default .navbar-brand {
@@ -45,7 +46,7 @@ body {
 }
 
 #vendor-info {
-  padding: 20px;
+  padding: 50px;
 }
 
 #new-listing {
@@ -189,4 +190,23 @@ background-color: #fe1a19;
 border-color: #fe1a19;
 padding: 5px 12px;
 }
+
+.row {
+margin-left: 50px;
+margin-right: 50px;
+}
+
+img {
+max-width: 500px;
+}
+
+.navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+margin-left: 40px;
+}
+
+.navbar-nav.navbar-right:last-child {
+margin-right: 40px;
+}
+
+
 
