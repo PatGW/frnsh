@@ -208,5 +208,11 @@ margin-left: 40px;
 margin-right: 40px;
 }
 
-
+.navbar-collapse.collapse {
+display: block !important;
+height: auto !important;
+padding-bottom: 0;
+overflow: visible !important;
+margin-left: 40px;
+}
 
