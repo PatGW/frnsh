@@ -13,6 +13,20 @@
 		<p><%= @listing.vendor %></p>
 		<p><%= @listing.description %></p>
 		<p><%= @listing.user.bio %></p>
+		
+		<div id="dimensions">
+		<div class="row">
+		<div class="col-md-4">
+		<h5>Width</h5><p><%= @listing.width %> CMS</p>
+		</div>
+		<div class="col-md-4">
+		<h5>Depth</h5><p><%= @listing.depth %> CMS</p>
+		</div>
+		<div class="col-md-4">
+		<h5>Height</h5><p><%= @listing.height %> CMS</p>
+		</div>
+		</div>
+	</div>
 		<br>
 		 <div class="center">
       <%= link_to "Buy It Now", new_listing_order_path(@listing), class: "btn btn-primary", data: { no_turbolink: true } %>

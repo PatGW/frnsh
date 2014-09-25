@@ -20,10 +20,35 @@
     <%= f.label :description %><br>
     <%= f.text_area :description, class: "form-control"  %>
   </div>
+<div class="row">
+  <div class="col-md-3">
   <div class="form-group">
     <%= f.label :category_id %><br>
     <%= f.collection_select :category_id, Category.all, :id, :name, {prompt: "Choose a category"}, {class: "btn btn-default dropdown-toggle"} %>
   </div>
+</div>
+  
+    <div class="col-md-3">
+  <div class="form-group">
+    <%= f.label :width %><br>
+    <%= f.text_field :width, class: "form-control"  %>
+  </div>
+</div>
+<div class="col-md-3">
+  <div class="form-group">
+    <%= f.label :depth %><br>
+    <%= f.text_field :depth, class: "form-control"  %>
+  </div>
+</div>
+<div class="col-md-3">
+  <div class="form-group">
+    <%= f.label :height %><br>
+    <%= f.text_field :height, class: "form-control"  %>
+  </div>
+</div>
+</div>
+
+
  <div class="form-group">
     <%= f.label :price %><br>
     <%= f.text_field :price, class: "form-control"  %>
