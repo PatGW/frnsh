@@ -57,6 +57,10 @@
     <%= f.label :image %><br>
     <%= f.file_field :image, class: "form-control"  %>
   </div>
+
+<% # jquery upload template # %>
+<script id="template-upload" type="text/x-tmpl"><div class="upload">{%=o.name%}<div class="progress"><div class="bar" style="width: 0%"></div></div></div></script>
+
   <div class="form-group">
     <%= f.submit class:"btn btn-primary" %>
   </div>

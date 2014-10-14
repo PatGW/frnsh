@@ -1,33 +1,16 @@
 <% if @vendor.blank? %>
-
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-  </ol>
-
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner">
-    <div class="item active">
-      <%= link_to image_tag("1.jpg", :alt => "Slide1"), {:class => "img-responsive", :alt => "Responsive image"} %>
-      <div class="carousel-caption">
-        <h2>Curated Designer Furniture</h2>
-        <h4>Buy and sell pre-loved designer furniture.</h4>
-      </div>
-    </div>
-    <div class="item">
-      <%= link_to image_tag("1.jpg", :alt => "Slide1"), {:class => "img-responsive", :alt => "Responsive image"} %>
-      <div class="carousel-caption">
-        <h2>Curated Designer Furniture</h2>
-        <h4>Buy and sell pre-loved designer furniture.</h4>
-      </div>
-      </div>
-    </div>
-  </div>
+<!-- <div class="row"> -->
+   <div class="col-md-12">
+<div id="featured_vendor">
+<%= link_to image_tag("oc.jpg", :alt => "Slide1", size: "850x350"), {:class => "img-responsive", :alt => "Responsive image"} %>
+<div id="shop_now">
+<p><%= link_to "Shop Now", vendor_listings_path(:vendor_id => '3'), {:class => "btn btn-default"} %></p>
+</div>
+</div>
 </div>
 
+</div>
+</div>
 <% end %>
 
 <div class="center">

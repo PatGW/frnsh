@@ -73,9 +73,6 @@ margin-top: 2px;
  max-height: 180px;
 }
 
-img {
-  max-width: 500px;
-}
 
 .carousel-caption {
     color: black;
@@ -192,13 +189,11 @@ padding: 5px 12px;
 }
 
 .row {
-margin-left: 50px;
-margin-right: 50px;
+margin-left: 40px;
+margin-right: 40px;
 }
 
-img {
-max-width: 500px;
-}
+
 
 .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
 margin-left: 40px;
@@ -223,4 +218,20 @@ font-size: 15px;
 #dimensions {
 margin-left: -65px;
 }
+
+#featured_vendor {
+  border: 2px solid;
+border-radius: 25px;
+width: 100%;
+padding-left: 15px;
+}
+
+#shop_now {
+  position: relative;
+  z-index: 2;
+  padding-left: 870px;
+  top: -200px;
+}
+
+
 
