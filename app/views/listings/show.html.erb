@@ -13,17 +13,19 @@
 		<p><%= @listing.vendor %></p>
 		<p><%= @listing.description %></p>
 		<p><%= @listing.user.bio %></p>
-		
+		<h5>Dimensions</h5>
 		<div id="dimensions">
 		<div class="row">
+			
 		<div class="col-md-4">
-		<h5>Width</h5><p><%= @listing.width %> CMS</p>
+
+		<p>Width</p><p><%= @listing.width %> CMS</p>
 		</div>
 		<div class="col-md-4">
-		<h5>Depth</h5><p><%= @listing.depth %> CMS</p>
+		<p>Depth</p><p><%= @listing.depth %> CMS</p>
 		</div>
 		<div class="col-md-4">
-		<h5>Height</h5><p><%= @listing.height %> CMS</p>
+		<p>Height</p><p><%= @listing.height %> CMS</p>
 		</div>
 		</div>
 	</div>
